@@ -5,7 +5,7 @@
 
 set -eu
 
-REPO_URL="${ANSIBLE_REPO_URL:-https://github.com/pratyay360/playbook.git}"
+REPO_URL="${ANSIBLE_REPO_URL:-https://github.com/plutoploy/playbook.git}"
 BRANCH="${ANSIBLE_BRANCH:-main}"
 PLAYBOOK="${ANSIBLE_PLAYBOOK:-site.yml}"
 setup_backup() {
