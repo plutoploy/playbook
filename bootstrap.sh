@@ -71,6 +71,10 @@ git clone --depth 1 --branch "${BRANCH}" "${REPO_URL}" "${TMPDIR}/repo" 2>/dev/n
 ansible-galaxy collection install -r "${TMPDIR}/repo/collections/requirements.yml"
 rm -rf "${TMPDIR}"
 
+echo "net.core.rmem_max=7340032\nnet.core.wmem_max=7340032" >> /etc/sysctl.d/69-service.conf
+
+systemctl daemon-reload
+
 echo "==> Running ansible-pull from ${REPO_URL} (branch: ${BRANCH})..."
 ansible-pull \
   --url "${REPO_URL}" \
