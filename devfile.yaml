@@ -1,7 +1,7 @@
 ---
 schemaVersion: 2.2.2
 metadata:
-  name: pratyay.automation-e9457c95
+  name: plutoploy.automation-e9457c95
 components:
   - name: tooling-container
     container:

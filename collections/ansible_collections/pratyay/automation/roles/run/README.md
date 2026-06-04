@@ -39,7 +39,7 @@ Another way to consume this role would be:
   gather_facts: false
   tasks:
     - name: Trigger invocation of run role
-      ansible.builtin.include_role:
+      ansible.builtin.includen
         name: pratyay.automation.run
       vars:
         run_x: 42

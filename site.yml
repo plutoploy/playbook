@@ -8,4 +8,4 @@
 - name: Run automation role
   hosts: all
   roles:
-    - role: pratyay.automation.run
+    - role: plutoploy.automation.run

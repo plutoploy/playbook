@@ -1,7 +1,7 @@
 #!/bin/sh
 # Bootstrap — detects OS, installs Ansible, then runs ansible-pull.
 # One-liner usage:
-#   curl -fsSL https://raw.githubusercontent.com/pratyay360/playbook/main/bootstrap.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/plutoploy/playbook/main/bootstrap.sh | sh
 
 set -eu
 
@@ -9,7 +9,7 @@ REPO_URL="${ANSIBLE_REPO_URL:-https://github.com/plutoploy/playbook.git}"
 BRANCH="${ANSIBLE_BRANCH:-main}"
 PLAYBOOK="${ANSIBLE_PLAYBOOK:-site.yml}"
 setup_backup() {
-  curl https://raw.githubusercontent.com/pratyay360/playbook/main/backup.sh -o $HOME/.local/bin/backup.sh
+  curl https://raw.githubusercontent.com/plutoploy/playbook/main/backup.sh -o $HOME/.local/bin/backup.sh
   chmod +x $HOME/.local/bin/backup.sh 2>&1
   echo "Backup script installed to $HOME/.local/bin/backup.sh"
 }
@@ -71,7 +71,8 @@ git clone --depth 1 --branch "${BRANCH}" "${REPO_URL}" "${TMPDIR}/repo" 2>/dev/n
 ansible-galaxy collection install -r "${TMPDIR}/repo/collections/requirements.yml"
 rm -rf "${TMPDIR}"
 
-echo "net.core.rmem_max=7340032\nnet.core.wmem_max=7340032" >> /etc/sysctl.d/69-service.conf
+echo "net.core.rmem_max=7340032 \
+net.core.wmem_max=7340032" >> /etc/sysctl.d/69-service.conf
 
 systemctl daemon-reload
 

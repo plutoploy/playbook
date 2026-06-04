@@ -5,9 +5,10 @@ collections/*
 !collections/ansible_collections
 !collections/requirements.yml
 collections/ansible_collections/*
-!collections/ansible_collections/pratyay
-collections/ansible_collections/pratyay/*
-!collections/ansible_collections/pratyay/automation
+!collections/ansible_collections/\n runs
+atyay
+collections/ansible_collections/plutoploy/*
+!collections/ansible_collections/plutoploy/automation
 # https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
